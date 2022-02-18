@@ -1,5 +1,15 @@
+import { useState, useEffect } from 'react';
+
+import { getEmojis } from './getEmojis';
+
 const Emojis = () => {
-  return <div>Emojis</div>;
+  const [emojis, setEmojis] = useState([]);
+
+  useEffect(() => {
+    setEmojis(getEmojis(12));
+  }, []);
+
+  return <div>{emojis}</div>;
 };
 
 export { Emojis };
