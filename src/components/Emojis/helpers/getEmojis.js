@@ -1,11 +1,14 @@
 import { emojis } from './emojis.js';
 
 const getEmojis = (count) => {
-  let emojisSubset = [];
-  for (let i = 0; i < count; i++) {
-    emojisSubset.push(emojis[Math.floor(Math.random() * emojis.length)]);
+  let randomEmojis = [];
+  while (randomEmojis.length < count) {
+    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+    if (randomEmojis.indexOf(randomEmoji) === -1) {
+      randomEmojis.push(randomEmoji);
+    }
   }
-  return emojisSubset;
+  return randomEmojis;
 };
 
 export { getEmojis };
