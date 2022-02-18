@@ -1,5 +1,11 @@
+import { Emojis } from './components/Emojis/Emojis';
+
 const App = () => {
-  return <>Hello, world!</>;
+  return (
+    <div>
+      <Emojis />
+    </div>
+  );
 };
 
 export default App;
