@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import { Emoji } from '../Emoji/Emoji';
+
 import { getEmojis } from './helpers/getEmojis';
 
 const Emojis = () => {
@@ -9,7 +11,13 @@ const Emojis = () => {
     setEmojis(getEmojis(12));
   }, []);
 
-  return <div>{emojis}</div>;
+  return (
+    <div>
+      {emojis.map((emoji) => (
+        <Emoji emoji={emoji} />
+      ))}
+    </div>
+  );
 };
 
 export { Emojis };
