@@ -6,6 +6,7 @@ import { getEmojis } from './helpers/getEmojis';
 
 const Emojis = () => {
   const [emojis, setEmojis] = useState([]);
+  const [clickedEmojis, setClickedEmojis] = useState([]);
 
   useEffect(() => {
     setEmojis(getEmojis(12));
@@ -14,7 +15,12 @@ const Emojis = () => {
   return (
     <div>
       {emojis.map((emoji) => (
-        <Emoji key={`game-${emoji}`} emoji={emoji} />
+        <Emoji
+          key={`game-${emoji}`}
+          emoji={emoji}
+          clickedEmojis={clickedEmojis}
+          setClickedEmojis={setClickedEmojis}
+        />
       ))}
     </div>
   );
