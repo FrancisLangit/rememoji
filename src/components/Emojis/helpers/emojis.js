@@ -820,12 +820,4 @@ const emojis = [
   '🔹',
 ];
 
-const getEmojis = (count) => {
-  let subset = [];
-  for (let i = 0; i < count; i++) {
-    subset.push(emojis[Math.floor(Math.random() * emojis.length)]);
-  }
-  return subset;
-};
-
-export { getEmojis };
+export { emojis };

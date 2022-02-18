@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { getEmojis } from './getEmojis';
+import { getEmojis } from './helpers/getEmojis';
 
 const Emojis = () => {
   const [emojis, setEmojis] = useState([]);
