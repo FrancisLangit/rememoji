@@ -14,7 +14,7 @@ const Emojis = () => {
   return (
     <div>
       {emojis.map((emoji) => (
-        <Emoji emoji={emoji} />
+        <Emoji key={`game-${emoji}`} emoji={emoji} />
       ))}
     </div>
   );
