@@ -1,8 +1,12 @@
 .board {
+  $border: 0.1em solid lightgrey;
+  border-bottom: $border;
+  border-top: $border;
   display: grid;
   grid-row-gap: 4em;
   grid-template-columns: repeat(3, 1fr);
-  margin-bottom: 3em;
+  margin-bottom: 2em;
+  padding: 2em 0;
 }
 
 .score {

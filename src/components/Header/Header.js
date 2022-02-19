@@ -5,11 +5,29 @@ const Header = () => {
     <div className={styles.container}>
       <div className={styles.title}>Rememoji</div>
       <div className={styles.links}>
-        <a href="">About</a>
+        <a
+          href="http://github.com/FrancisLangit/rememoji"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          About
+        </a>
         <span> • </span>
-        <a href="">How to Play</a>
+        <a
+          href="http://github.com/FrancisLangit/rememoji#how-to-play"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          How to Play
+        </a>
         <span> • </span>
-        <a href="">Author</a>
+        <a
+          href="http://github.com/FrancisLangit/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Author
+        </a>
       </div>
     </div>
   );
