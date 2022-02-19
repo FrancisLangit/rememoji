@@ -13,7 +13,9 @@ const App = () => {
   if (gamestate === -1) {
     return <LoseScreen setGamestate={setGamestate} />;
   } else {
-    return <Emojis gamestate={gamestate} setGamestate={setGamestate} />;
+    return (
+      <Emojis count={10} gamestate={gamestate} setGamestate={setGamestate} />
+    );
   }
 };
 

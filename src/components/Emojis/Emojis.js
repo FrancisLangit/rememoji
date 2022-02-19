@@ -7,12 +7,13 @@ import { getShuffledArray } from './helpers/getShuffledArray';
 import { hasDuplicates } from './helpers/hasDuplicates';
 import styles from './Emojis.module.scss';
 
-const Emojis = ({ gamestate, setGamestate }) => {
-  const [emojis, setEmojis] = useState(getEmojis(9));
+const Emojis = ({ count, gamestate, setGamestate }) => {
+  const [emojis, setEmojis] = useState(getEmojis(count));
   const [clickedEmojis, setClickedEmojis] = useState([]);
 
   // Shuffle emojis state array whenever a user clicks on an emoji.
   useEffect(() => {
+    console.log(clickedEmojis);
     setEmojis((emojis) => getShuffledArray([...emojis]));
     hasDuplicates(clickedEmojis) && setGamestate(-1);
   }, [clickedEmojis, setGamestate]);
@@ -20,10 +21,10 @@ const Emojis = ({ gamestate, setGamestate }) => {
   // Restart the game if and when passed prop gamestate is -2.
   useEffect(() => {
     if (gamestate === -2) {
-      setEmojis(getEmojis(9));
+      setEmojis(getEmojis(count));
       setGamestate(0);
     }
-  }, [gamestate, setGamestate]);
+  }, [count, gamestate, setGamestate]);
 
   return (
     <div className={styles.container}>
