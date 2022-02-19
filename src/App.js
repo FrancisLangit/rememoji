@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { Emojis } from './components/Emojis/Emojis';
-import { LoseScreen } from './components/LoseScreen/LoseScreen';
+import { Game } from './components/Game/Game';
+import { EndScreen } from './components/EndScreen/EndScreen';
 
 const App = () => {
   const [gamestate, setGamestate] = useState(0);
@@ -11,11 +11,11 @@ const App = () => {
   }, [gamestate]);
 
   if (gamestate === -1) {
-    return <LoseScreen setGamestate={setGamestate} />;
+    return <EndScreen text="You lose!" setGamestate={setGamestate} />;
+  } else if (gamestate === 1) {
+    return <EndScreen text="You win!" setGamestate={setGamestate} />;
   } else {
-    return (
-      <Emojis count={2} gamestate={gamestate} setGamestate={setGamestate} />
-    );
+    return <Game count={6} gamestate={gamestate} setGamestate={setGamestate} />;
   }
 };
 

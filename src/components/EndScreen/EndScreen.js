@@ -1,14 +1,14 @@
-import styles from './LoseScreen.module.scss';
+import styles from './EndScreen.module.scss';
 
 import { RestartButton } from '../RestartButton/RestartButton';
 
-const LoseScreen = ({ setGamestate }) => {
+const EndScreen = ({ text, setGamestate }) => {
   return (
     <div className={styles.container}>
-      <div>You lose!</div>
+      <div>{text}</div>
       <RestartButton setGamestate={setGamestate} />
     </div>
   );
 };
 
-export { LoseScreen };
+export { EndScreen };

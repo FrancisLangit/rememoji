@@ -5,9 +5,9 @@ import { Emoji } from '../Emoji/Emoji';
 import { getEmojis } from './helpers/getEmojis';
 import { getShuffledArray } from './helpers/getShuffledArray';
 import { hasDuplicates } from './helpers/hasDuplicates';
-import styles from './Emojis.module.scss';
+import styles from './Game.module.scss';
 
-const Emojis = ({ count, gamestate, setGamestate }) => {
+const Game = ({ count, gamestate, setGamestate }) => {
   const [emojis, setEmojis] = useState(getEmojis(count));
   const [clickedEmojis, setClickedEmojis] = useState([]);
 
@@ -28,7 +28,7 @@ const Emojis = ({ count, gamestate, setGamestate }) => {
 
   // Detect if the game has been won.
   useEffect(() => {
-    if (clickedEmojis.length === count) {
+    if (clickedEmojis.length === count && !hasDuplicates(clickedEmojis)) {
       setGamestate(1);
     }
   }, [clickedEmojis, count, setGamestate]);
@@ -47,4 +47,4 @@ const Emojis = ({ count, gamestate, setGamestate }) => {
   );
 };
 
-export { Emojis };
+export { Game };
