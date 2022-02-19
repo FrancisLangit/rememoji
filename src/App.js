@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { EndScreen } from './components/EndScreen/EndScreen';
 import { Game } from './components/Game/Game';
+import { SettingsForm } from './components/SettingsForm/SettingsForm';
 
 const App = () => {
+  const [emojiCount, setEmojiCount] = useState(6);
   const [gamestate, setGamestate] = useState(0);
   const [score, setScore] = useState(-1);
 
@@ -17,13 +19,16 @@ const App = () => {
     return <EndScreen text="You win!" setGamestate={setGamestate} />;
   } else {
     return (
-      <Game
-        count={6}
-        score={score}
-        setScore={setScore}
-        gamestate={gamestate}
-        setGamestate={setGamestate}
-      />
+      <div>
+        <SettingsForm emojiCount={emojiCount} />
+        <Game
+          emojiCount={emojiCount}
+          score={score}
+          setScore={setScore}
+          gamestate={gamestate}
+          setGamestate={setGamestate}
+        />
+      </div>
     );
   }
 };

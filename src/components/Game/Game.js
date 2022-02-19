@@ -7,8 +7,8 @@ import { getShuffledArray } from './helpers/getShuffledArray';
 import { hasDuplicates } from './helpers/hasDuplicates';
 import styles from './Game.module.scss';
 
-const Game = ({ count, score, setScore, gamestate, setGamestate }) => {
-  const [emojis, setEmojis] = useState(getEmojis(count));
+const Game = ({ emojiCount, score, setScore, gamestate, setGamestate }) => {
+  const [emojis, setEmojis] = useState(getEmojis(emojiCount));
   const [clickedEmojis, setClickedEmojis] = useState([]);
 
   // If the user clicks on an emoji previously clicked on, the game is lost.
@@ -26,18 +26,18 @@ const Game = ({ count, score, setScore, gamestate, setGamestate }) => {
   // Restart the game if and when passed prop "gamestate" is -2.
   useEffect(() => {
     if (gamestate === -2) {
-      setEmojis(getEmojis(count));
+      setEmojis(getEmojis(emojiCount));
       setGamestate(0);
       setScore(0);
     }
-  }, [count, gamestate, setGamestate, setScore]);
+  }, [emojiCount, gamestate, setGamestate, setScore]);
 
   // Detect if the game has been won.
   useEffect(() => {
-    if (clickedEmojis.length === count && !hasDuplicates(clickedEmojis)) {
+    if (clickedEmojis.length === emojiCount && !hasDuplicates(clickedEmojis)) {
       setGamestate(1);
     }
-  }, [clickedEmojis, count, setGamestate]);
+  }, [clickedEmojis, emojiCount, setGamestate]);
 
   return (
     <div>
