@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import styles from './App.module.scss';
+import './App.module.scss';
 
 import { EndScreen } from './components/EndScreen/EndScreen';
+import { Footer } from './components/Footer/Footer';
 import { Game } from './components/Game/Game';
 import { Header } from './components/Header/Header';
 import { SettingsForm } from './components/SettingsForm/SettingsForm';
@@ -36,6 +37,7 @@ const App = () => {
           gamestate={gamestate}
           setGamestate={setGamestate}
         />
+        <Footer />
       </div>
     );
   }
