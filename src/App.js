@@ -7,14 +7,14 @@ const App = () => {
   const [gamestate, setGamestate] = useState(0);
 
   useEffect(() => {
-    console.log(gamestate);
+    console.log(`Gamestate: ${gamestate}`);
   }, [gamestate]);
 
   if (gamestate === -1) {
     return <LoseScreen setGamestate={setGamestate} />;
   } else {
     return (
-      <Emojis count={10} gamestate={gamestate} setGamestate={setGamestate} />
+      <Emojis count={2} gamestate={gamestate} setGamestate={setGamestate} />
     );
   }
 };

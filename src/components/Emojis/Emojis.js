@@ -13,7 +13,7 @@ const Emojis = ({ count, gamestate, setGamestate }) => {
 
   // Shuffle emojis state array whenever a user clicks on an emoji.
   useEffect(() => {
-    console.log(clickedEmojis);
+    console.log(`Clicked: ${clickedEmojis}`);
     setEmojis((emojis) => getShuffledArray([...emojis]));
     hasDuplicates(clickedEmojis) && setGamestate(-1);
   }, [clickedEmojis, setGamestate]);
@@ -25,6 +25,13 @@ const Emojis = ({ count, gamestate, setGamestate }) => {
       setGamestate(0);
     }
   }, [count, gamestate, setGamestate]);
+
+  // Detect if the game has been won.
+  useEffect(() => {
+    if (clickedEmojis.length === count) {
+      setGamestate(1);
+    }
+  }, [clickedEmojis, count, setGamestate]);
 
   return (
     <div className={styles.container}>
