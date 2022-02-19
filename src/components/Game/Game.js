@@ -14,7 +14,6 @@ const Game = ({ emojiCount, score, setScore, gamestate, setGamestate }) => {
   // If the user clicks on an emoji previously clicked on, the game is lost.
   // Else, increment score and shuffle gameboard when a user clicks on an emoji.
   useEffect(() => {
-    console.log(`Clicked: ${clickedEmojis}`);
     if (hasDuplicates(clickedEmojis)) {
       setGamestate(-1);
     } else {

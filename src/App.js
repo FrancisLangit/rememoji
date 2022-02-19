@@ -13,10 +13,6 @@ const App = () => {
   const [gamestate, setGamestate] = useState(0);
   const [score, setScore] = useState(-1);
 
-  useEffect(() => {
-    console.log(`Gamestate: ${gamestate}`);
-  }, [gamestate]);
-
   if (gamestate === -1) {
     return <EndScreen text="You lose!" setGamestate={setGamestate} />;
   } else if (gamestate === 1) {
