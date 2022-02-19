@@ -22,3 +22,17 @@
     }
   }
 }
+
+@media (max-width: 425px) {
+  .container {
+    margin-bottom: 1em;
+  }
+
+  .title {
+    font-size: 2em;
+  }
+
+  .links a {
+    font-size: 1em;
+  }
+}

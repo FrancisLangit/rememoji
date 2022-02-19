@@ -2,3 +2,9 @@ body {
   font-family: sans-serif;
   padding: 2em;
 }
+
+@media (max-width: 425px) {
+  body {
+    padding: 1em 0;
+  }
+}

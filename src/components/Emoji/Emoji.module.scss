@@ -5,3 +5,9 @@
   justify-self: center;
   user-select: none;
 }
+
+@media (max-width: 425px) {
+  .container {
+    font-size: 3em;
+  }
+}

@@ -13,3 +13,13 @@
   font-size: 2em;
   text-align: center;
 }
+
+@media (max-width: 425px) {
+  .board {
+    margin-bottom: 1em;
+  }
+
+  .score {
+    font-size: 1.5em;
+  }
+}
