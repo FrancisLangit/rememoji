@@ -15,7 +15,13 @@ const SettingsForm = ({ emojiCount, setEmojiCount, setGamestate }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="number" value={value} onChange={handleChange} />
+      <input
+        type="number"
+        value={value}
+        min={2}
+        max={30}
+        onChange={handleChange}
+      />
       <input type="submit" value="Submit" />
     </form>
   );
