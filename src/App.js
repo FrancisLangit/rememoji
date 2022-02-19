@@ -20,7 +20,11 @@ const App = () => {
   } else {
     return (
       <div>
-        <SettingsForm emojiCount={emojiCount} />
+        <SettingsForm
+          emojiCount={emojiCount}
+          setEmojiCount={setEmojiCount}
+          setGamestate={setGamestate}
+        />
         <Game
           emojiCount={emojiCount}
           score={score}
