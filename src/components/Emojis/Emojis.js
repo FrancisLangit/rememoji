@@ -4,9 +4,10 @@ import { Emoji } from '../Emoji/Emoji';
 
 import { getEmojis } from './helpers/getEmojis';
 import { getShuffledArray } from './helpers/getShuffledArray';
+import styles from './Emojis.module.scss';
 
 const Emojis = () => {
-  const [emojis, setEmojis] = useState(getEmojis(12));
+  const [emojis, setEmojis] = useState(getEmojis(9));
   const [clickedEmojis, setClickedEmojis] = useState([]);
 
   useEffect(() => {
@@ -14,7 +15,7 @@ const Emojis = () => {
   }, [clickedEmojis]);
 
   return (
-    <div>
+    <div className={styles.container}>
       {emojis.map((emoji) => (
         <Emoji
           key={`game-${emoji}`}
