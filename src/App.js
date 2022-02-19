@@ -9,11 +9,11 @@ const App = () => {
     console.log(gamestate);
   }, [gamestate]);
 
-  return (
-    <div>
-      <Emojis setGamestate={setGamestate} />
-    </div>
-  );
+  if (gamestate === -1) {
+    return <>You lose!</>;
+  } else {
+    return <Emojis setGamestate={setGamestate} />;
+  }
 };
 
 export default App;
