@@ -5,7 +5,7 @@ import { RestartButton } from '../RestartButton/RestartButton';
 const EndScreen = ({ text, setGamestate }) => {
   return (
     <div className={styles.container}>
-      <div>{text}</div>
+      <div className={styles.text}>{text}</div>
       <RestartButton setGamestate={setGamestate} />
     </div>
   );
