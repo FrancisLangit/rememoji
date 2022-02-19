@@ -1,0 +1,24 @@
+.container {
+  margin-bottom: 3em;
+}
+
+.title {
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.links {
+  text-align: center;
+
+  & a {
+    color: black;
+    font-size: 1.5em;
+    font-weight: lighter;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
