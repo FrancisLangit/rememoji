@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 
+import styles from './App.module.scss';
+
 import { EndScreen } from './components/EndScreen/EndScreen';
 import { Game } from './components/Game/Game';
+import { Header } from './components/Header/Header';
 import { SettingsForm } from './components/SettingsForm/SettingsForm';
 
 const App = () => {
-  const [emojiCount, setEmojiCount] = useState(6);
+  const [emojiCount, setEmojiCount] = useState(9);
   const [gamestate, setGamestate] = useState(0);
   const [score, setScore] = useState(-1);
 
@@ -20,11 +23,12 @@ const App = () => {
   } else {
     return (
       <div>
-        <SettingsForm
+        {/* <SettingsForm
           emojiCount={emojiCount}
           setEmojiCount={setEmojiCount}
           setGamestate={setGamestate}
-        />
+        /> */}
+        <Header />
         <Game
           emojiCount={emojiCount}
           score={score}

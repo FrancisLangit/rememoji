@@ -1,11 +1,11 @@
-.container {
+.board {
   display: grid;
+  grid-row-gap: 4em;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2em;
+  margin-bottom: 3em;
 }
 
 .score {
   font-size: 2em;
-  margin-bottom: 2em;
   text-align: center;
 }

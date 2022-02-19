@@ -41,8 +41,7 @@ const Game = ({ emojiCount, score, setScore, gamestate, setGamestate }) => {
 
   return (
     <div>
-      <div className={styles.score}>Score: {score}</div>
-      <div className={styles.container}>
+      <div className={styles.board}>
         {emojis.map((emoji) => (
           <Emoji
             key={`game-${emoji}`}
@@ -52,6 +51,7 @@ const Game = ({ emojiCount, score, setScore, gamestate, setGamestate }) => {
           />
         ))}
       </div>
+      <div className={styles.score}>Score is {score}.</div>
     </div>
   );
 };
