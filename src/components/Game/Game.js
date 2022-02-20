@@ -53,7 +53,9 @@ const Game = ({ emojiCount, gamestate, setGamestate }) => {
           />
         ))}
       </div>
-      <div className={styles.score}>Score is {clickedEmojis.length}.</div>
+      <div className={styles.score}>
+        {clickedEmojis.length} of {emojis.length}.
+      </div>
     </div>
   );
 };
