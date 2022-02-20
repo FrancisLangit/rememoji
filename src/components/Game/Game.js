@@ -24,18 +24,22 @@ const Game = ({ emojiCount, gamestate, setGamestate }) => {
   // Restart the game if and when passed prop "gamestate" is -2.
   useEffect(() => {
     if (gamestate === -2) {
-      setEmojis(getEmojis(emojiCount));
       setClickedEmojis([]);
+      setEmojis(getEmojis(emojiCount));
       setGamestate(0);
     }
   }, [emojiCount, gamestate, setGamestate]);
 
   // Detect if the game has been won.
   useEffect(() => {
-    if (clickedEmojis.length === emojiCount && !hasDuplicates(clickedEmojis)) {
+    if (
+      clickedEmojis.length === emojiCount &&
+      clickedEmojis.sort().join(',') === emojis.sort().join(',') &&
+      !hasDuplicates(clickedEmojis)
+    ) {
       setGamestate(1);
     }
-  }, [clickedEmojis, emojiCount, setGamestate]);
+  }, [clickedEmojis, emojis, emojiCount, setGamestate]);
 
   return (
     <div>
