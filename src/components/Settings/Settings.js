@@ -13,6 +13,7 @@ const Settings = ({ emojiCount, setEmojiCount, setGamestate }) => {
           emojiCount={emojiCount}
           setEmojiCount={setEmojiCount}
           setGamestate={setGamestate}
+          setIsShow={setIsShow}
         />
       ) : null}
       <Button setIsShow={setIsShow} />

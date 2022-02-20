@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import styles from './Form.module.scss';
 
-const Form = ({ emojiCount, setEmojiCount, setGamestate }) => {
+const Form = ({ emojiCount, setEmojiCount, setGamestate, setIsShow }) => {
   const [value, setValue] = useState(emojiCount);
 
   const handleChange = (event) => {
@@ -13,6 +13,7 @@ const Form = ({ emojiCount, setEmojiCount, setGamestate }) => {
     event.preventDefault();
     setEmojiCount(parseInt(value));
     setGamestate(-2);
+    setIsShow(false);
   };
 
   return (
