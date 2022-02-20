@@ -11,7 +11,6 @@ import { Settings } from './components/Settings/Settings';
 const App = () => {
   const [emojiCount, setEmojiCount] = useState(12);
   const [gamestate, setGamestate] = useState(0);
-  const [score, setScore] = useState(-1);
 
   if (gamestate === -1) {
     return <EndScreen text="u lawst 🙃" setGamestate={setGamestate} />;
@@ -23,8 +22,6 @@ const App = () => {
         <Header />
         <Game
           emojiCount={emojiCount}
-          score={score}
-          setScore={setScore}
           gamestate={gamestate}
           setGamestate={setGamestate}
         />
