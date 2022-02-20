@@ -43,7 +43,7 @@ const Game = ({ emojiCount, gamestate, setGamestate }) => {
 
   return (
     <div>
-      <div className={styles.board}>
+      <div className={styles.board} key={Math.random()}>
         {emojis.map((emoji) => (
           <Emoji
             key={`game-${emoji}`}
