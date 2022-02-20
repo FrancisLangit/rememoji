@@ -28,12 +28,11 @@ const App = () => {
           gamestate={gamestate}
           setGamestate={setGamestate}
         />
-        {/* <Settings
+        <Settings
           emojiCount={emojiCount}
           setEmojiCount={setEmojiCount}
           setGamestate={setGamestate}
-        /> */}
-        <Settings />
+        />
         <Footer />
       </div>
     );

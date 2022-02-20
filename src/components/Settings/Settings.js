@@ -2,8 +2,19 @@ import { useState } from 'react';
 
 import styles from './Settings.module.scss';
 
-const Form = ({ emojiCount, setEmojiCount, setGamestate }) => {
+const Button = ({ setIsShow }) => {
+  return (
+    <div className={styles.buttonContainer}>
+      <div className={styles.button} onClick={() => setIsShow(true)}>
+        ⚙️ Settings
+      </div>
+    </div>
+  );
+};
+
+const Settings = ({ emojiCount, setEmojiCount, setGamestate }) => {
   const [value, setValue] = useState(emojiCount);
+  const [isShow, setIsShow] = useState(false);
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -16,27 +27,20 @@ const Form = ({ emojiCount, setEmojiCount, setGamestate }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="number"
-        value={value}
-        min={2}
-        max={30}
-        onChange={handleChange}
-      />
-      <input type="submit" value="Submit" />
-    </form>
-  );
-};
-
-const Button = () => {
-  return <div className={styles.button}>⚙️ Settings</div>;
-};
-
-const Settings = () => {
-  return (
-    <div className={styles.container}>
-      <Button />
+    <div>
+      {isShow ? (
+        <form onSubmit={handleSubmit}>
+          <input
+            type="number"
+            value={value}
+            min={2}
+            max={30}
+            onChange={handleChange}
+          />
+          <input type="submit" value="Submit" />
+        </form>
+      ) : null}
+      <Button setIsShow={setIsShow} />
     </div>
   );
 };
