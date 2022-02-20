@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import './App.module.scss';
+import styles from './App.module.scss';
 
 import { EndScreen } from './components/EndScreen/EndScreen';
 import { Footer } from './components/Footer/Footer';
@@ -18,7 +18,7 @@ const App = () => {
     return <EndScreen text="u 1!!! 🏆" setGamestate={setGamestate} />;
   } else {
     return (
-      <div>
+      <div className={styles.App}>
         <Header />
         <Game
           emojiCount={emojiCount}
