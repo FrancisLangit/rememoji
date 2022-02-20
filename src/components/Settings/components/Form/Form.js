@@ -30,6 +30,9 @@ const Form = ({ emojiCount, setEmojiCount, setGamestate, setIsShow }) => {
             onWheel={(e) => e.target.blur()}
           />
           <input className={styles.formSubmit} type="submit" value="Submit" />
+          <div className={styles.formCancel} onClick={() => setIsShow(false)}>
+            Cancel
+          </div>
         </form>
       </div>
     </div>
