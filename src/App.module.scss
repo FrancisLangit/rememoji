@@ -9,12 +9,12 @@
 
 body {
   font-family: sans-serif;
+  padding: 2em;
 }
 
 .App {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   animation: fadein 0.75s;
-  padding: 2em;
 }
 
 @media (max-width: 425px) {
