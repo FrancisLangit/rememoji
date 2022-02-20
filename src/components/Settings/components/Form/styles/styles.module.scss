@@ -9,11 +9,16 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.content {
+.modal {
   background-color: whitesmoke;
   border-radius: 0.5em;
   margin: 10% auto;
   padding: 2em;
+
+  &Text {
+    margin-bottom: 1em;
+    text-align: center;
+  }
 }
 
 .form {
@@ -36,16 +41,18 @@
     border: 1px solid lightgrey;
     font-size: 4em;
     margin-bottom: 0.25em;
-    padding: 1em;
+    outline: none;
+    padding: 0.75em;
   }
 
   &Submit,
   &Cancel {
     border-radius: 0.5em;
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin-top: 0.75em;
     padding: 0.5em;
+    user-select: none;
   }
 
   &Submit {
@@ -54,9 +61,19 @@
     background: $color;
     border: 1px solid $color;
     color: white;
+
+    &:hover {
+      background: #0850bd;
+    }
   }
 
   &Cancel {
     background: #adb5bd;
+
+    &:hover {
+      background: #939699;
+    }
   }
 }
+
+@import './mediaQueries.scss';

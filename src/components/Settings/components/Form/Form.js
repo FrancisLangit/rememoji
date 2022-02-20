@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import styles from './Form.module.scss';
+import styles from './styles/styles.module.scss';
 
 const Form = ({ emojiCount, setEmojiCount, setGamestate, setIsShow }) => {
   const [value, setValue] = useState(emojiCount);
@@ -18,7 +18,8 @@ const Form = ({ emojiCount, setEmojiCount, setGamestate, setIsShow }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.content}>
+      <div className={styles.modal}>
+        <div className={styles.modalText}>How many emojis?</div>
         <form onSubmit={handleSubmit}>
           <input
             className={styles.formValue}
