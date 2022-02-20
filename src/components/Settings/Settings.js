@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
-const SettingsForm = ({ emojiCount, setEmojiCount, setGamestate }) => {
+import styles from './Settings.module.scss';
+
+const Form = ({ emojiCount, setEmojiCount, setGamestate }) => {
   const [value, setValue] = useState(emojiCount);
 
   const handleChange = (event) => {
@@ -27,4 +29,16 @@ const SettingsForm = ({ emojiCount, setEmojiCount, setGamestate }) => {
   );
 };
 
-export { SettingsForm };
+const Button = () => {
+  return <div className={styles.button}>⚙️ Settings</div>;
+};
+
+const Settings = () => {
+  return (
+    <div className={styles.container}>
+      <Button />
+    </div>
+  );
+};
+
+export { Settings };
