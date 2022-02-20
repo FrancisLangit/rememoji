@@ -1,8 +1,13 @@
 .container {
   align-self: center;
-  border: 1px solid black;
   cursor: pointer;
-  font-size: 5em;
+  font-size: 3.75em;
   justify-self: center;
   user-select: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    font-size: 3em;
+  }
 }

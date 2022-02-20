@@ -7,42 +7,43 @@ import { getShuffledArray } from './helpers/getShuffledArray';
 import { hasDuplicates } from './helpers/hasDuplicates';
 import styles from './Game.module.scss';
 
-const Game = ({ emojiCount, score, setScore, gamestate, setGamestate }) => {
+const Game = ({ emojiCount, gamestate, setGamestate }) => {
   const [emojis, setEmojis] = useState(getEmojis(emojiCount));
   const [clickedEmojis, setClickedEmojis] = useState([]);
 
   // If the user clicks on an emoji previously clicked on, the game is lost.
   // Else, increment score and shuffle gameboard when a user clicks on an emoji.
   useEffect(() => {
-    console.log(`Clicked: ${clickedEmojis}`);
     if (hasDuplicates(clickedEmojis)) {
       setGamestate(-1);
     } else {
       setEmojis((emojis) => getShuffledArray([...emojis]));
-      setScore((score) => score + 1);
     }
-  }, [clickedEmojis, setGamestate, setScore]);
+  }, [clickedEmojis, setGamestate]);
 
   // Restart the game if and when passed prop "gamestate" is -2.
   useEffect(() => {
     if (gamestate === -2) {
+      setClickedEmojis([]);
       setEmojis(getEmojis(emojiCount));
       setGamestate(0);
-      setScore(0);
     }
-  }, [emojiCount, gamestate, setGamestate, setScore]);
+  }, [emojiCount, gamestate, setGamestate]);
 
   // Detect if the game has been won.
   useEffect(() => {
-    if (clickedEmojis.length === emojiCount && !hasDuplicates(clickedEmojis)) {
+    if (
+      clickedEmojis.length === emojiCount &&
+      clickedEmojis.sort().join(',') === emojis.sort().join(',') &&
+      !hasDuplicates(clickedEmojis)
+    ) {
       setGamestate(1);
     }
-  }, [clickedEmojis, emojiCount, setGamestate]);
+  }, [clickedEmojis, emojis, emojiCount, setGamestate]);
 
   return (
     <div>
-      <div className={styles.score}>Score: {score}</div>
-      <div className={styles.container}>
+      <div className={styles.board}>
         {emojis.map((emoji) => (
           <Emoji
             key={`game-${emoji}`}
@@ -52,6 +53,7 @@ const Game = ({ emojiCount, score, setScore, gamestate, setGamestate }) => {
           />
         ))}
       </div>
+      <div className={styles.score}>Score is {clickedEmojis.length}.</div>
     </div>
   );
 };

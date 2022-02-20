@@ -1,4 +1,13 @@
 .container {
+  border-radius: 0.25em;
+  border: 1px solid black;
   cursor: pointer;
-  border: 1px solid blue;
+  display: inline-block;
+  font-size: 3.5vw;
+  padding: 0.5em;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
 }

@@ -1,0 +1,37 @@
+.container {
+  margin-bottom: 2em;
+}
+
+.title {
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.links {
+  text-align: center;
+
+  & a {
+    color: black;
+    font-weight: lighter;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-bottom: 1em;
+  }
+
+  .title {
+    font-size: 2em;
+  }
+
+  .links a {
+    font-size: 1em;
+  }
+}
