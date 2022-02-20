@@ -11,3 +11,17 @@
     font-size: 3em;
   }
 }
+
+@media (min-width: 1024px) {
+  .container {
+    transition: 0.25s;
+
+    &:hover {
+      padding: 0 0.25em;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      border-radius: 0.5em;
+    }
+  }
+}
