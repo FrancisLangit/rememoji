@@ -10,9 +10,38 @@
 }
 
 .content {
-  background-color: #fefefe;
+  background-color: whitesmoke;
   border-radius: 0.5em;
-  margin: 15% auto;
+  margin: 10% auto;
   padding: 2em;
-  width: 50%;
+  // width: 50%;
+}
+
+.form {
+  &Value,
+  &Submit {
+    -moz-appearance: textfield;
+    border: 1px solid lightgrey;
+    text-align: center;
+    width: 100%;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &Value {
+    border-radius: 0.25em;
+    box-sizing: border-box;
+    font-size: 4em;
+    margin-bottom: 0.25em;
+    padding: 1em;
+  }
+
+  &Submit {
+    border-radius: 0.5em;
+    font-size: 1.5em;
+    padding: 0.5em;
+  }
 }

@@ -20,13 +20,15 @@ const Form = ({ emojiCount, setEmojiCount, setGamestate }) => {
       <div className={styles.content}>
         <form onSubmit={handleSubmit}>
           <input
+            className={styles.formValue}
             type="number"
             value={value}
             min={2}
             max={30}
             onChange={handleChange}
+            onWheel={(e) => e.target.blur()}
           />
-          <input type="submit" value="Submit" />
+          <input className={styles.formSubmit} type="submit" value="Submit" />
         </form>
       </div>
     </div>
