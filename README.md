@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+![banner.png](./images/banner.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`rememoji` is a stylized rendition of The Odin Project's "Memory Card" project built on React with heavy usage of the framework's `useState` and `useEffect` hooks.
 
-## Available Scripts
+## How to Play
 
-In the project directory, you can run:
+To win, one must select every emoji on the gameboard without ever selecting any of them more than once. Should the player fail to do so, the game generates a new set of emojis and restarts.
+
+![how_to_play_1.gif](./images/how_to_play_1.gif)
+
+---
+
+![how_to_play_2.gif](./images/how_to_play_2.gif)
+
+---
+
+The number of emojis on the gameboard can be mutated at any given moment. Players can have as little as two or as many as thirty emojis displayed at once.
+
+With that, do take note that any currently running round restarts if and when such a change is submitted.
+
+![how_to_play_3.gif](./images/how_to_play_3.gif)
+
+## Installation
+
+> Note: A live deployment of `rememoji` is [available](https://francislangit.github.io/rememoji/) online.
+
+1. Clone the repository with `git clone https://github.com/FrancisLangit/rememoji` or download it as a `.zip` file.
+2. Navigate to where the repository is saved on your local machine on a command line.
+3. Enter `npm install` to install the application's dependencies.
+
+## Setup
+
+There are two ways to run the web application locally. One may run either of the following upon navigating to the repository on a command line.
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Such will run the app in development mode, allowing one to open up http://localhost:3000 to use the application.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This will alternatively create a locally constructed instance of the web application. If successful, one should find a `build/` folder generated within the repository.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Pull requests are welcome for those that would like to make a contribution. For those that would like to apply major changes to the repository, we'd like to request that you open up an issue first and discuss the changes you'd like to make.
 
-### `npm run eject`
+## License
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT License](https://github.com/FrancisLangit/rememoji/blob/main/LICENSE)

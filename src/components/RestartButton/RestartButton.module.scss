@@ -5,6 +5,8 @@
   display: inline-block;
   font-size: 3.5vw;
   padding: 0.5em;
+  transition: 1s;
+  user-select: none;
 
   &:hover {
     background-color: black;

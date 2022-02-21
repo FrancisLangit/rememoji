@@ -8,14 +8,13 @@ const Settings = ({ emojiCount, setEmojiCount, setGamestate }) => {
 
   return (
     <>
-      {isShow ? (
-        <Form
-          emojiCount={emojiCount}
-          setEmojiCount={setEmojiCount}
-          setGamestate={setGamestate}
-          setIsShow={setIsShow}
-        />
-      ) : null}
+      <Form
+        emojiCount={emojiCount}
+        setEmojiCount={setEmojiCount}
+        setGamestate={setGamestate}
+        isShow={isShow}
+        setIsShow={setIsShow}
+      />
       <Button setIsShow={setIsShow} />
     </>
   );
