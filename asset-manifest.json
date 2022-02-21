@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/rememoji/static/css/main.25da7270.css",
+    "main.js": "/rememoji/static/js/main.3993b136.js",
+    "index.html": "/rememoji/index.html",
+    "main.25da7270.css.map": "/rememoji/static/css/main.25da7270.css.map",
+    "main.3993b136.js.map": "/rememoji/static/js/main.3993b136.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25da7270.css",
+    "static/js/main.3993b136.js"
+  ]
+}
